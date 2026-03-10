@@ -1,0 +1,1 @@
+{"version":3,"file":"sbom.d.ts","sourceRoot":"","sources":["../../src/formatters/sbom.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AAS5C,qBAAa,aAAa;IAClB,QAAQ,CACZ,aAAa,EAAE,MAAM,EAAE,EACvB,WAAW,EAAE,WAAW,GACvB,OAAO,CAAC,GAAG,CAAC;IA6Cf,OAAO,CAAC,cAAc;YAYR,aAAa;CAc5B"}

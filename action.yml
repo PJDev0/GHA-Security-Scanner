@@ -1,0 +1,53 @@
+name: 'GitHub Actions Security Scanner'
+description: 'Security scanner for GitHub Actions workflows with auto-remediation'
+author: 'Security Team'
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  github-token:
+    description: 'GitHub token (requires contents:read, pull-requests:write for auto-fix)'
+    required: true
+    default: ${{ github.token }}
+  
+  scan-path:
+    description: 'Glob pattern for workflow files'
+    required: false
+    default: '.github/workflows/**/*.{yml,yaml}'
+  
+  severity-threshold:
+    description: 'Minimum severity (CRITICAL, HIGH, MEDIUM, LOW, INFO)'
+    required: false
+    default: 'HIGH'
+  
+  auto-fix:
+    description: 'Create PRs with fixes'
+    required: false
+    default: 'false'
+  
+  generate-sbom:
+    description: 'Generate SBOM'
+    required: false
+    default: 'true'
+  
+  fail-on-detection:
+    description: 'Fail if issues found above threshold'
+    required: false
+    default: 'true'
+
+outputs:
+  findings-count:
+    description: 'Total findings'
+  critical-count:
+    description: 'Critical count'
+  high-count:
+    description: 'High count'
+  report-path:
+    description: 'SARIF report path'
+  sbom-path:
+    description: 'SBOM file path'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

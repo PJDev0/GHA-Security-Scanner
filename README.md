@@ -91,7 +91,7 @@ Development
 Prerequisites: Node.js 20+, npm 9+
 
 Setup commands:
-git clone https://github.com/your-username/gha-security-scanner.git
+git clone https://github.com/PJDev0/gha-security-scanner.git
 cd gha-security-scanner
 npm install
 
